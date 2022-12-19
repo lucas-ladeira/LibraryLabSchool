@@ -25,6 +25,7 @@ public class AuthorController {
         return ResponseEntity.ok(this.authorService.search(_id));
     }
 
+    @GetMapping
     public ResponseEntity<List<Author>> authorsList() {
         return ResponseEntity.ok(this.authorService.authorsList());
     }

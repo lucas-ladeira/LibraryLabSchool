@@ -9,17 +9,16 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Book {
+public class Card {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String title;
+    private String number;
 
-    @ManyToOne
-    private Author author;
+    private Double limit;
 
-    private Integer quantity;
+    private Double currentLimit;
 
-    private Double price;
+    private Enum<TypeCard> type;
 }

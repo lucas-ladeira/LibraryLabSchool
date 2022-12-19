@@ -5,21 +5,20 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Data;
 
+import java.util.Set;
+
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Book {
+public class Client {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String title;
+    private String name;
 
-    @ManyToOne
-    private Author author;
+    private String cpf;
 
-    private Integer quantity;
-
-    private Double price;
+    private Set<TypeCard> cards;
 }

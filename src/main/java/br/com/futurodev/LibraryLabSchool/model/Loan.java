@@ -5,21 +5,24 @@ import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Data;
 
+import java.time.LocalDate;
+
 @Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Book {
+public class Loan {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String title;
+    private LocalDate startDate;
 
-    @ManyToOne
-    private Author author;
+    private LocalDate endDate;
 
-    private Integer quantity;
+    private Double cost;
 
-    private Double price;
+    private Double total;
+
+    private Double status;
 }
